@@ -2,31 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:screenOrientation="portrait">
-
-    <!--<ImageView-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:layout_centerInParent="true"-->
-        <!--android:background="#001f37"-->
-        <!--android:contentDescription="@string/app_name" />-->
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/app_name"
-        android:background="#001f37"
-        android:src="@drawable/start" />
+    android:background="@drawable/start">
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
-        android:text="@string/start" />
+        android:layout_centerVertical="true"
+        android:background="@drawable/btnstart" />
+
+    <Button
+        android:id="@+id/btnplay"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btnplay" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/btnplay"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Stop" />
 
 </RelativeLayout>
