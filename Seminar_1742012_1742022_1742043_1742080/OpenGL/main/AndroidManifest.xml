@@ -28,11 +28,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.opengl.Instructions"
+        android:name="com.example.opengl.Instructions"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="com.example.opengl.INSTRUCTIONS" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+        <activity
+            android:name="com.example.opengl.HighScore"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="com.example.opengl.INSTRUCTIONS" />
+                <action android:name="com.example.opengl.HighScore" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -46,6 +56,11 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.hoangdang.only.org.andresoviedo.model3D.view.ModelActivity"
+            android:label="title_activity_model"
+            android:parentActivityName="com.example.opengl.Start">
         </activity>
     </application>
 </manifest>
