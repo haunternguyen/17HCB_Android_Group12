@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/menu">
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/soundon" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btnback" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imgIron"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/panthergif" />
+
+    <ImageView
+        android:id="@+id/chu"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imgIron"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/highscore" />
+
+    <TextView
+        android:id="@+id/txtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chu"
+        android:layout_centerHorizontal="true"
+        android:textSize="32dp" />
+
+
+</RelativeLayout>

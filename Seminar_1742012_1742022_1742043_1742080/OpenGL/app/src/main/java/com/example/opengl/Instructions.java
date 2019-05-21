@@ -21,23 +21,23 @@ public class Instructions extends Activity implements View.OnClickListener {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.instructions);
 
-        ImageView iv = (ImageView) findViewById(R.id.ivInstructions);
-        iv.setOnClickListener(this);
-
-        Thread timer = new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    startIntent();
-                }
-            }
-        };
-        timer.start();
+//        ImageView iv = (ImageView) findViewById(R.id.ivInstructions);
+//        iv.setOnClickListener(this);
+//
+//        Thread timer = new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    sleep(10000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                } finally {
+//                    startIntent();
+//                }
+//            }
+//        };
+//        timer.start();
     }
 
     @Override

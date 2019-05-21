@@ -1,18 +1,16 @@
 package com.example.opengl;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.hoangdang.only.org.andresoviedo.model3D.view.ModelActivity;
 import com.example.hoangdang.only.org.andresoviedo.util.android.AssetUtils;
@@ -21,8 +19,10 @@ import com.example.hoangdang.only.org.andresoviedo.util.android.ContentUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class Start extends Activity implements View.OnClickListener {
-    SharedPreferences sharedpreferences;
+
     MediaPlayer mediaPlayer;
     private Map<String, Object> loadModelParameters = new HashMap<>();
 
@@ -34,10 +34,20 @@ public class Start extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.start);
 
-        Button b = (Button) findViewById(R.id.btnStart);
-        b.setOnClickListener(this);
+//        Button b = (Button) findViewById(R.id.btnStart);
+//        b.setOnClickListener(this);
 
-
+        Button btnHighScore = (Button) findViewById(R.id.btnHighscore);
+        btnHighScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent("com.example.opengl.HighScore");
+                startActivity(i);
+            }
+        });
+        GifImageView emoji;
+        emoji = (GifImageView) findViewById(R.id.imgIron);
+        emoji.setOnClickListener(this);
 //        Button btnPlay = (Button) findViewById(R.id.btnplay);
 //        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.attention);
 //        btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +88,7 @@ public class Start extends Activity implements View.OnClickListener {
             }
         });
     }
+
     private void launchModelRendererActivity(Uri uri) {
         Log.i("Menu", "Launching renderer for '" + uri + "'");
         Intent intent = new Intent(getApplicationContext(), ModelActivity.class);
@@ -92,25 +103,13 @@ public class Start extends Activity implements View.OnClickListener {
 
         startActivity(intent);
     }
+
     @Override
     public void onClick(View v) {
-        sharedpreferences = getApplicationContext().getSharedPreferences("MyPref", 0);
-
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        int SoCuoiCung = sharedpreferences.getInt("highScore", 0);
-        SoCuoiCung++;
-        editor.putInt("highScore", SoCuoiCung);
-        editor.commit();
-
-        int ketqua = sharedpreferences.getInt("highScore", 0);
-
-        Toast.makeText(Start.this, String.valueOf(ketqua),
-                Toast.LENGTH_LONG).show();
-
-
         Intent i = new Intent("com.example.opengl.MAIN");
         startActivity(i);
     }
 
 }
+
 
