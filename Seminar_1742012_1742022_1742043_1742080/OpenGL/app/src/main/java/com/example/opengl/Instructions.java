@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class Instructions extends Activity implements View.OnClickListener {
@@ -20,7 +21,14 @@ public class Instructions extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.instructions);
+        Button but1=(Button)findViewById(R.id.btnBack);
 
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 //        ImageView iv = (ImageView) findViewById(R.id.ivInstructions);
 //        iv.setOnClickListener(this);
 //

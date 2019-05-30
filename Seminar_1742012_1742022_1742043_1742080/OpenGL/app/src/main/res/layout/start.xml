@@ -5,6 +5,7 @@
     android:background="@drawable/menu">
 
     <Button
+        android:id="@+id/btnSound"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentRight="true"

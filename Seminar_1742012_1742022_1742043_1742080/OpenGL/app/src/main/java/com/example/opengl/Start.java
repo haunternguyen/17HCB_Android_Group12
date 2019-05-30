@@ -25,6 +25,7 @@ public class Start extends Activity implements View.OnClickListener {
 
     MediaPlayer mediaPlayer;
     private Map<String, Object> loadModelParameters = new HashMap<>();
+    boolean soundOn = true;
 
 
     @Override
@@ -33,9 +34,9 @@ public class Start extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.start);
-
-//        Button b = (Button) findViewById(R.id.btnStart);
-//        b.setOnClickListener(this);
+        // mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.attention);
+        // mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.attention);
+        // mediaPlayer.start();
 
         Button btnHighScore = (Button) findViewById(R.id.btnHighscore);
         btnHighScore.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +46,8 @@ public class Start extends Activity implements View.OnClickListener {
                 startActivity(i);
             }
         });
-        GifImageView emoji;
-        emoji = (GifImageView) findViewById(R.id.imgIron);
-        emoji.setOnClickListener(this);
+        Button btnPlay = (Button) findViewById(R.id.btnPlay);
+        btnPlay.setOnClickListener(this);
 //        Button btnPlay = (Button) findViewById(R.id.btnplay);
 //        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.attention);
 //        btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +64,21 @@ public class Start extends Activity implements View.OnClickListener {
 //                mediaPlayer.pause();
 //            }
 //        });
+        Button btnSound = (Button) findViewById(R.id.btnSound);
+        btnSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (soundOn == true) {
+                    soundOn = false;
+                    btnSound.setBackgroundResource(R.drawable.soundoff);
+                    // mediaPlayer.pause();
+                } else {
+                    btnSound.setBackgroundResource(R.drawable.soundon);
+                    // mediaPlayer.start();
+                    soundOn = true;
+                }
+            }
+        });
 
         Button btnLoad3d = (Button) findViewById(R.id.btnLoadModel);
         btnLoad3d.setOnClickListener(new View.OnClickListener() {

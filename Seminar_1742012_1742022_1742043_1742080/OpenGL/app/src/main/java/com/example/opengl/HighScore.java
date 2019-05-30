@@ -5,8 +5,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HighScore extends Activity {
@@ -31,5 +33,14 @@ public class HighScore extends Activity {
         txtHighScore.setText(chuoi);
 //        txtHighScore.setText(SoCuoiCung);
         Log.e("So Cuoi Cung",chuoi);
+
+        Button but1=(Button)findViewById(R.id.btnBack);
+
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
