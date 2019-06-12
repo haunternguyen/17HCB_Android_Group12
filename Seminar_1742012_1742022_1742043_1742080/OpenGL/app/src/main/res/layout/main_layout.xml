@@ -15,39 +15,34 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/rotate"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="3dp"
-            android:background="@drawable/refresh" />
-        <Button
-            android:id="@+id/btnUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:background="@drawable/camera_up" />
-
-        <Button
-            android:id="@+id/btnDown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:background="@drawable/camera_down" />
 
         <Button
             android:id="@+id/btnLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:background="@drawable/camera_left" />
+            android:background="@drawable/camera_trai" />
+
+        <Button
+            android:id="@+id/btnUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/camera_len" />
+
+        <Button
+            android:id="@+id/btnDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/camera_xuong" />
 
         <Button
             android:id="@+id/btnRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:background="@drawable/camera_right" />
+            android:background="@drawable/camera_phai" />
     </LinearLayout>
 
     <TextView
