@@ -100,11 +100,11 @@ public abstract class AbstractOpenGlRenderer implements Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        Cube mCube = new Cube();
+        // Cube mCube = new Cube();
 
         // Clears the screen and depth buffer.
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
-        mCube.draw(gl);
+        // mCube.draw(gl);
         gl.glLoadIdentity();
         gl.glTranslatef(-2.5f, -4f, 0f);
 

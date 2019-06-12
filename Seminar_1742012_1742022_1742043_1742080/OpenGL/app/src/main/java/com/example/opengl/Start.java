@@ -23,7 +23,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class Start extends Activity implements View.OnClickListener {
 
-    MediaPlayer mediaPlayer;
+    MediaPlayer player;
     private Map<String, Object> loadModelParameters = new HashMap<>();
     boolean soundOn = true;
 
@@ -38,6 +38,9 @@ public class Start extends Activity implements View.OnClickListener {
         // mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.attention);
         // mediaPlayer.start();
 
+        player = MediaPlayer.create(getApplicationContext(),
+                R.raw.attention);
+        player.start();
         Button btnHighScore = (Button) findViewById(R.id.btnHighscore);
         btnHighScore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,10 +74,10 @@ public class Start extends Activity implements View.OnClickListener {
                 if (soundOn == true) {
                     soundOn = false;
                     btnSound.setBackgroundResource(R.drawable.soundoff);
-                    // mediaPlayer.pause();
+                    player.pause();
                 } else {
                     btnSound.setBackgroundResource(R.drawable.soundon);
-                    // mediaPlayer.start();
+                    player.start();
                     soundOn = true;
                 }
             }
