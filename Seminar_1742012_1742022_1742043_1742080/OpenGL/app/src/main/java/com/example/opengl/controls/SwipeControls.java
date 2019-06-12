@@ -18,26 +18,25 @@ public class SwipeControls implements OnTouchListener {
     public void onSwipeRight() {
         //Log.d("Kruno", "" + isMultiTouch);
        // GameStatus.setCurrentXPositionPos();
-        GameStatus.setCameraR(GameStatus.getCameraR() - 1);
+        GameStatus.setCameraR(GameStatus.getCameraR() - 10);
     }
 
     public void onSwipeLeft() {
         //Log.d("Kruno", "" + isMultiTouch);
        // GameStatus.setCurrentXPositionNeg();
-        GameStatus.setCameraR(GameStatus.getCameraR() + 1);
-        //kkk
+        GameStatus.setCameraR(GameStatus.getCameraR() + 10);
     }
 
     public void onSwipeTop() {
         //Log.d("Kruno", "" + isMultiTouch);
         //GameStatus.setCurrentYPositionPos();
-        GameStatus.setCameraH(GameStatus.getCameraH() - 1);
+        GameStatus.setCameraH(GameStatus.getCameraH() - 5);
     }
 
     public void onSwipeBottom() {
         //Log.d("Kruno", "" + isMultiTouch);
        // GameStatus.setCurrentYPositionNeg();
-        GameStatus.setCameraH(GameStatus.getCameraH() + 1);
+        GameStatus.setCameraH(GameStatus.getCameraH() + 5);
     }
 
     private boolean isMultiTouch = false;
