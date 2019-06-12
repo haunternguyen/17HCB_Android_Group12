@@ -69,6 +69,23 @@ public class MainActivity extends Activity {
         Button b2 = (Button) findViewById(R.id.btnDown);
         Button b3 = (Button) findViewById(R.id.btnLeft);
         Button b4 = (Button) findViewById(R.id.btnRight);
+        Button btnXoay = (Button) findViewById(R.id.btnXoay);
+        btnXoay.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                GameStatus.getCurrentObject().rotate('z');
+            }
+        });
+
+        Button btnBack = (Button) findViewById(R.id.btnBack);
+        btnBack.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         ButtonControls bc = new ButtonControls(this);
         b1.setOnTouchListener(bc);
