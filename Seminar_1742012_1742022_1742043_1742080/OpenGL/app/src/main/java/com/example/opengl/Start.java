@@ -39,7 +39,7 @@ public class Start extends Activity implements View.OnClickListener {
         // mediaPlayer.start();
 
         player = MediaPlayer.create(getApplicationContext(),
-                R.raw.attention);
+                R.raw.nhac);
         player.start();
         Button btnHighScore = (Button) findViewById(R.id.btnHighscore);
         btnHighScore.setOnClickListener(new View.OnClickListener() {
