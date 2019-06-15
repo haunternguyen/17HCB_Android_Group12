@@ -74,7 +74,8 @@ public class OpenGlRenderer extends AbstractOpenGlRenderer {
     }
 
     private void newShpe() {
-        int objNum = randInt(0, 5);
+         int objNum = randInt(0, 4);
+//        int objNum = 2;
         GameStatus.setCurrentObject(chooseObject(objNum));
         GameStatus.setCurrentPosition(GameStatus.getStartX(), GameStatus.getStartY(), GameStatus.getGameHeight());
     }

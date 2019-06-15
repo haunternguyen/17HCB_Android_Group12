@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -25,6 +26,7 @@ public class ButtonControls extends Activity implements OnTouchListener {
         switch (v.getId()) {
 
             case com.example.opengl.R.id.btnUp:
+                Log.e("nhan up", "nhan up");
                 GameStatus.setCurrentYPositionPos();
 //                switch (event.getAction()) {
 //                    case MotionEvent.ACTION_DOWN:

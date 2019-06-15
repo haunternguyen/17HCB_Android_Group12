@@ -52,8 +52,6 @@ public class MainActivity extends Activity {
 //        }
 
 
-
-
         //==============
 //        SkyBoxRender renderer = new SkyBoxRender(this);
         OpenGlRenderer renderer = new OpenGlRenderer();
@@ -62,7 +60,7 @@ public class MainActivity extends Activity {
         glView.requestFocus();
         glView.setFocusableInTouchMode(true);
 
-         GameStatus.init(this);
+        GameStatus.init(this);
         glView.setOnTouchListener(new SwipeControls(this));
 
         Button b1 = (Button) findViewById(R.id.btnUp);
@@ -70,8 +68,7 @@ public class MainActivity extends Activity {
         Button b3 = (Button) findViewById(R.id.btnLeft);
         Button b4 = (Button) findViewById(R.id.btnRight);
         Button btnXoay = (Button) findViewById(R.id.btnXoay);
-        btnXoay.setOnClickListener( new View.OnClickListener() {
-
+        btnXoay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GameStatus.getCurrentObject().rotate('z');
@@ -79,8 +76,7 @@ public class MainActivity extends Activity {
         });
 
         Button btnBack = (Button) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener( new View.OnClickListener() {
-
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -96,6 +92,7 @@ public class MainActivity extends Activity {
         final TextView tv = (TextView) findViewById(R.id.tvGameOver);
         Thread timer = new Thread() {
             private volatile boolean mIsStopped = false;
+
             @Override
             public void run() {
                 super.run();
@@ -117,8 +114,8 @@ public class MainActivity extends Activity {
 
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
                                 int SoCuoiCung = sharedpreferences.getInt("highScore", 0);
-                                Log.e("socuoi cung: " , String.valueOf(SoCuoiCung));
-                                Log.e("temp: " , String.valueOf(temp));
+                                Log.e("socuoi cung: ", String.valueOf(SoCuoiCung));
+                                Log.e("temp: ", String.valueOf(temp));
                                 if (SoCuoiCung < temp) {
                                     editor.putInt("highScore", temp);
                                     editor.commit();
@@ -134,8 +131,10 @@ public class MainActivity extends Activity {
         };
         timer.start();
     }
+
     private void initView() {
-        glSurfaceView = glSurfaceView = (GLSurfaceView) findViewById(R.id.glSurface);;
+        glSurfaceView = glSurfaceView = (GLSurfaceView) findViewById(R.id.glSurface);
+        ;
         glSurfaceView.setEGLContextClientVersion(2);
 
         skyboxRenderer = new SkyBoxRender(this);
