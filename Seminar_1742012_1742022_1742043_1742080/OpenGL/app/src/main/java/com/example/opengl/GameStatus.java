@@ -36,14 +36,6 @@ public class GameStatus {
 		dropFast = false;
 	}
 
-	/**
-	 * Postavi kameru
-	 * 
-	 * @param r
-	 *            Radijus kružnice na kojoj je kamera
-	 * @param h
-	 *            Visina kammere
-	 */
 	public static void setCamera(float r, float h) {
 		GameStatus.cameraR = r;
 		GameStatus.cameraH = h;

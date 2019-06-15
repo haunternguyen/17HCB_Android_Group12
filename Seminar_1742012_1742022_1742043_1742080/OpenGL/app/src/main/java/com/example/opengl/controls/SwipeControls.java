@@ -4,34 +4,39 @@ import com.example.opengl.GameStatus;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
 public class SwipeControls implements OnTouchListener {
-
+    private Handler mHandler_up, mHandler_down, mHandler_right, mHandler_left;
     public SwipeControls(Context _c) {
     }
 
     public void onSwipeRight() {
         //Log.d("Kruno", "" + isMultiTouch);
-        GameStatus.setCurrentXPositionPos();
+       // GameStatus.setCurrentXPositionPos();
+        GameStatus.setCameraR(GameStatus.getCameraR() - 10);
     }
 
     public void onSwipeLeft() {
         //Log.d("Kruno", "" + isMultiTouch);
-        GameStatus.setCurrentXPositionNeg();
+       // GameStatus.setCurrentXPositionNeg();
+        GameStatus.setCameraR(GameStatus.getCameraR() + 10);
     }
 
     public void onSwipeTop() {
         //Log.d("Kruno", "" + isMultiTouch);
-        GameStatus.setCurrentYPositionPos();
+        //GameStatus.setCurrentYPositionPos();
+        GameStatus.setCameraH(GameStatus.getCameraH() - 5);
     }
 
     public void onSwipeBottom() {
         //Log.d("Kruno", "" + isMultiTouch);
-        GameStatus.setCurrentYPositionNeg();
+       // GameStatus.setCurrentYPositionNeg();
+        GameStatus.setCameraH(GameStatus.getCameraH() + 5);
     }
 
     private boolean isMultiTouch = false;

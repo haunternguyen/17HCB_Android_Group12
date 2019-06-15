@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -25,68 +26,73 @@ public class ButtonControls extends Activity implements OnTouchListener {
         switch (v.getId()) {
 
             case com.example.opengl.R.id.btnUp:
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        if (mHandler_up != null)
-                            return true;
-                        mHandler_up = new Handler();
-                        mHandler_up.postDelayed(mAction_up, 50);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        if (mHandler_up == null)
-                            return true;
-                        mHandler_up.removeCallbacks(mAction_up);
-                        mHandler_up = null;
-                        break;
-                }
+                Log.e("nhan up", "nhan up");
+                GameStatus.setCurrentYPositionPos();
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        if (mHandler_up != null)
+//                            return true;
+//                        mHandler_up = new Handler();
+//                        mHandler_up.postDelayed(mAction_up, 50);
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        if (mHandler_up == null)
+//                            return true;
+//                        mHandler_up.removeCallbacks(mAction_up);
+//                        mHandler_up = null;
+//                        break;
+//                }
                 break;
             case com.example.opengl.R.id.btnDown:
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        if (mHandler_down != null)
-                            return true;
-                        mHandler_down = new Handler();
-                        mHandler_down.postDelayed(mAction_down, 50);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        if (mHandler_down == null)
-                            return true;
-                        mHandler_down.removeCallbacks(mAction_down);
-                        mHandler_down = null;
-                        break;
-                }
+                GameStatus.setCurrentYPositionNeg();
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        if (mHandler_down != null)
+//                            return true;
+//                        mHandler_down = new Handler();
+//                        mHandler_down.postDelayed(mAction_down, 50);
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        if (mHandler_down == null)
+//                            return true;
+//                        mHandler_down.removeCallbacks(mAction_down);
+//                        mHandler_down = null;
+//                        break;
+//                }
                 break;
             case com.example.opengl.R.id.btnLeft:
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        if (mHandler_left != null)
-                            return true;
-                        mHandler_left = new Handler();
-                        mHandler_left.postDelayed(mAction_left, 50);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        if (mHandler_left == null)
-                            return true;
-                        mHandler_left.removeCallbacks(mAction_left);
-                        mHandler_left = null;
-                        break;
-                }
+                GameStatus.setCurrentXPositionNeg();
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        if (mHandler_left != null)
+//                            return true;
+//                        mHandler_left = new Handler();
+//                        mHandler_left.postDelayed(mAction_left, 50);
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        if (mHandler_left == null)
+//                            return true;
+//                        mHandler_left.removeCallbacks(mAction_left);
+//                        mHandler_left = null;
+//                        break;
+//                }
                 break;
             case com.example.opengl.R.id.btnRight:
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        if (mHandler_right != null)
-                            return true;
-                        mHandler_right = new Handler();
-                        mHandler_right.postDelayed(mAction_right, 50);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        if (mHandler_right == null)
-                            return true;
-                        mHandler_right.removeCallbacks(mAction_right);
-                        mHandler_right = null;
-                        break;
-                }
+                GameStatus.setCurrentXPositionPos();
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        if (mHandler_right != null)
+//                            return true;
+//                        mHandler_right = new Handler();
+//                        mHandler_right.postDelayed(mAction_right, 50);
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        if (mHandler_right == null)
+//                            return true;
+//                        mHandler_right.removeCallbacks(mAction_right);
+//                        mHandler_right = null;
+//                        break;
+//                }
                 break;
         }
 

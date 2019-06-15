@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class Instructions extends Activity implements View.OnClickListener {
@@ -20,24 +21,31 @@ public class Instructions extends Activity implements View.OnClickListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.instructions);
+        Button but1=(Button)findViewById(R.id.btnBack);
 
-        ImageView iv = (ImageView) findViewById(R.id.ivInstructions);
-        iv.setOnClickListener(this);
-
-        Thread timer = new Thread() {
+        but1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                super.run();
-                try {
-                    sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    startIntent();
-                }
+            public void onClick(View v) {
+                finish();
             }
-        };
-        timer.start();
+        });
+//        ImageView iv = (ImageView) findViewById(R.id.ivInstructions);
+//        iv.setOnClickListener(this);
+//
+//        Thread timer = new Thread() {
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    sleep(10000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                } finally {
+//                    startIntent();
+//                }
+//            }
+//        };
+//        timer.start();
     }
 
     @Override
@@ -52,10 +60,10 @@ public class Instructions extends Activity implements View.OnClickListener {
     }
 
     private void startIntent() {
-        if (!started) {
-            started = true;
-            startActivity(i);
-        }
+//        if (!started) {
+//            started = true;
+//            startActivity(i);
+//        }
     }
 
 }
