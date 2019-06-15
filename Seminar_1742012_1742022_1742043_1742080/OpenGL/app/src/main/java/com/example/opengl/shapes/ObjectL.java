@@ -4,7 +4,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class ObjectL extends AbstractDraw implements IShape {
 
-	String color = "#0091FF";
+	String color = "#1D1DE7";
 
 	boolean objectMatrix[][][];
 
